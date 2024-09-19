@@ -9,12 +9,11 @@
 ;   You must not remove this notice, or any other, from this software.
 
 (ns seesaw.test.widgets.rounded-label
-  (:use [seesaw.widgets.rounded-label])
-  (:use [lazytest.describe :only (describe it testing)]
-        [lazytest.expect :only (expect)]))
+  (:require [seesaw.widgets.rounded-label :refer :all]
+            [lazytest.core :refer [defdescribe expect-it it expect]]))
 
-(describe rounded-label
-  (it "creates a sub-class of label"
+(defdescribe rounded-label-test
+  (expect-it "creates a sub-class of label"
     (instance? javax.swing.JLabel (rounded-label)))
   (it "honors label options"
     (let [rl (rounded-label :text "hi" :background :blue)]

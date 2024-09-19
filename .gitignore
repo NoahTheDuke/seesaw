@@ -18,3 +18,4 @@ autodoc/**
 .clj-kondo/.cache
 .lsp/.cache
 .portal/vs-code.edn
+.nrepl-port

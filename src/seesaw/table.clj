@@ -39,8 +39,8 @@
   (let [[head [_ & tail]] (split-at pos row-vec)]
     (vec (concat head tail))))
 
-(defn- ^javax.swing.table.DefaultTableModel proxy-table-model
-  [column-names column-key-map column-classes]
+(defn- proxy-table-model
+  ^javax.swing.table.DefaultTableModel [column-names column-key-map column-classes]
   (let [full-values (atom [])]
     (proxy [javax.swing.table.DefaultTableModel] [(object-array column-names) 0]
       (isCellEditable [row col] false)
@@ -131,7 +131,7 @@
     (seesaw.core/table)
     http://download.oracle.com/javase/6/docs/api/javax/swing/table/TableModel.html
   "
-  [& {:keys [columns rows] :as opts}]
+  ^javax.swing.table.DefaultTableModel [& {:keys [columns rows] :as opts}]
   (let [norm-cols   (map normalize-column columns)
         col-names   (map :text norm-cols)
         col-classes (map :class norm-cols)

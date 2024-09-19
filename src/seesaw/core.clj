@@ -1178,7 +1178,7 @@
   See:
     http://download.oracle.com/javase/6/docs/api/javax/swing/JLabel.html
   "
-  [& args]
+  ^JLabel [& args]
   (case (count args)
     0 (label :text "")
     1 (label :text (first args))
@@ -1532,8 +1532,7 @@
     (seesaw.core/style-text!)
     http://download.oracle.com/javase/6/docs/api/javax/swing/JTextPane.html
   "
-  { :arglists '([& args]) }
-  [& {:as opts}]
+  ^JTextPane [& {:as opts}]
   (let [pane (proxy [JTextPane] []
                (getScrollableTracksViewportWidth []
                  (boolean (get-meta this :wrap-lines?))))]
@@ -1548,7 +1547,7 @@
     (seesaw.core/text)
     http://download.oracle.com/javase/tutorial/uiswing/components/editorpane.html
   "
-  [^JTextPane target id ^Integer start ^Integer length]
+  ^JTextPane [^JTextPane target id ^Integer start ^Integer length]
   (check-args (instance? JTextPane target) "style-text! only applied to styled-text widgets")
   (.setCharacterAttributes (.getStyledDocument target)
                             start length (.getStyle target (name id)) true)
