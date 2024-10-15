@@ -25,8 +25,8 @@
                  [org.swinglabs.swingx/swingx-core "1.6.3"]
                  [j18n "1.0.2"]
                  [com.fifesoft/rsyntaxtextarea "2.5.6"]]
-  :profiles { :dev {:dependencies [[io.github.noahtheduke/lazytest "0.4.2"]
-                                   [lein-autodoc "0.9.0"]]}}
+  :profiles {:dev {:dependencies [[io.github.noahtheduke/lazytest "1.2.0"]
+                                  [lein-autodoc "0.9.0"]]}}
   :repositories [["stuartsierra-releases" "https://stuartsierra.com/maven2"]]
   :autodoc {
     :name "Seesaw",
